@@ -3,19 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página en GitHub</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Mi Sitio Web | Portafolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Bienvenido a mi página</h1>
+        <nav>
+            <div class="logo">
+                <h1>Mi Nombre</h1>
+            </div>
+            <ul class="menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
+
     <main>
-        <p>Esta es mi web alojada en GitHub Pages.</p>
-                <p>EN CONSTRUCCION.</p>
-        
-        <button onclick="saludar()">Haz clic aquí</button>
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h2>Desarrollador Web</h2>
+                <p>Bienvenido a mi portafolio profesional</p>
+                <a href="#contacto" class="btn">Contáctame</a>
+            </div>
+        </section>
+
+        <section id="proyectos" class="projects">
+            <h2>Mis Proyectos</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="img/proyecto1.jpg" alt="Proyecto 1">
+                    <h3>Proyecto 1</h3>
+                    <p>Descripción del proyecto y tecnologías utilizadas.</p>
+                    <a href="#" class="btn">Ver más</a>
+                </div>
+                <div class="project-card">
+                    <img src="img/proyecto2.jpg" alt="Proyecto 2">
+                    <h3>Proyecto 2</h3>
+                    <p>Descripción del proyecto y tecnologías utilizadas.</p>
+                    <a href="#" class="btn">Ver más</a>
+                </div>
+                <div class="project-card">
+                    <img src="img/proyecto3.jpg" alt="Proyecto 3">
+                    <h3>Proyecto 3</h3>
+                    <p>Descripción del proyecto y tecnologías utilizadas.</p>
+                    <a href="#" class="btn">Ver más</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="habilidades" class="skills">
+            <h2>Mis Habilidades</h2>
+            <div class="skills-container">
+                <div class="skill">HTML5</div>
+                <div class="skill">CSS3</div>
+                <div class="skill">JavaScript</div>
+                <div class="skill">React</div>
+                <div class="skill">Node.js</div>
+                <div class="skill">Git</div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contact">
+            <h2>Contacto</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+        </section>
     </main>
-    <script src="script.js"></script>
+
+    <footer>
+        <p>&copy; 2025 Mi Nombre. Todos los derechos reservados.</p>
+        <div class="social-links">
+            <a href="https://github.com/tunombre" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/tunombre" target="_blank">LinkedIn</a>
+            <a href="https://twitter.com/tunombre" target="_blank">Twitter</a>
+        </div>
+    </footer>
 </body>
 </html>
