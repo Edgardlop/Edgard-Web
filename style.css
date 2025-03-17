@@ -1,28 +1,236 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Header y navegación */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Nuevo estilo para menú horizontal */
+.menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.menu a {
+    font-weight: 500;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.menu a:hover {
+    border-color: #4e9af1;
+}
+
+/* Sección hero */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding-top: 60px;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    background-color: #4e9af1;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #3a7bd5;
+}
+
+/* Secciones comunes */
+section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+/* Proyectos */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    padding: 1.5rem 1.5rem 0.5rem;
+    font-size: 1.5rem;
+}
+
+.project-card p {
+    padding: 0 1.5rem 1.5rem;
+}
+
+.project-card .btn {
+    margin: 0 1.5rem 1.5rem;
+}
+
+/* Habilidades */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.skill {
+    background-color: #4e9af1;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 500;
+}
+
+/* Contacto */
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.contact .btn {
+    cursor: pointer;
+    border: none;
+    width: 100%;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 0 0.5rem;
+    padding: 0.3rem;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.social-links a:hover {
+    border-color: #fff;
+}
+
 /* Media queries para responsividad */
 @media (max-width: 768px) {
-    /* Navegación en móvil */
     nav {
         flex-direction: column;
-        padding: 0.8rem 1rem;
     }
     
     .menu {
         margin-top: 1rem;
         justify-content: center;
-        width: 100%;
-    }
-    
-    .menu a {
-        padding: 0.8rem 0.5rem;
-        text-align: center;
-        font-size: 0.9rem;
-    }
-    
-    /* Hero section en móvil */
-    .hero {
-        padding-top: 120px;
-        height: auto;
-        min-height: 85vh;
+        flex-wrap: wrap;
+        gap: 1rem;
     }
     
     .hero h2 {
@@ -30,123 +238,6 @@
     }
     
     .hero p {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
-    
-    /* Secciones en móvil */
-    section {
-        padding: 3rem 1.2rem;
-    }
-    
-    section h2 {
-        font-size: 1.8rem;
-        margin-bottom: 2rem;
-    }
-    
-    /* Proyectos en móvil */
-    .project-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .project-card h3 {
-        padding: 1rem 1rem 0.5rem;
-        font-size: 1.3rem;
-    }
-    
-    /* Habilidades en móvil */
-    .skills-container {
-        gap: 0.8rem;
-    }
-    
-    .skill {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
-    }
-    
-    /* Formulario en móvil */
-    .form-group {
-        margin-bottom: 1rem;
-    }
-    
-    .form-group input,
-    .form-group textarea {
-        padding: 0.8rem;
-        font-size: 1rem;
-    }
-    
-    /* Footer en móvil */
-    footer {
-        padding: 1.5rem 1rem;
-    }
-}
-
-/* Media query para dispositivos muy pequeños */
-@media (max-width: 480px) {
-    .menu {
-        gap: 0.8rem;
-        flex-wrap: wrap;
-    }
-    
-    .menu a {
-        padding: 0.5rem;
-        margin: 0.2rem;
-        width: calc(50% - 0.8rem);
-        border: 1px solid #eee;
-        border-radius: 5px;
-    }
-    
-    .hero h2 {
-        font-size: 1.7rem;
-    }
-    
-    .btn {
-        width: 100%;
-        text-align: center;
-        padding: 0.8rem 1rem;
-    }
-    
-    .social-links {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-    
-    .social-links a {
-        margin: 0;
-        padding: 0.5rem 1rem;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 3px;
-    }
-}
-/* Mejoras de experiencia táctil */
-.touch-active {
-    opacity: 0.8;
-    transform: scale(0.98);
-}
-
-/* Evitar que el texto sea seleccionable en elementos interactivos en móvil */
-.btn, .menu a, .project-card h3, .skill {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    user-select: none;
-}
-
-/* Asegurar que todos los elementos táctiles tengan tamaño adecuado */
-.btn, .menu a, .skill, input[type="submit"], button {
-    min-height: 44px; /* Recomendación de Apple para áreas táctiles */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Ajustes para formularios en móvil */
-input, textarea, select, button {
-    font-size: 16px; /* Previene zoom automático en iOS */
-}
-
-/* Eliminar resaltado en elementos interactivos en móvil */
-a, button, input, select, textarea {
-    -webkit-tap-highlight-color: transparent;
 }
