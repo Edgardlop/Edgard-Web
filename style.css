@@ -40,21 +40,24 @@ nav {
     font-weight: 700;
 }
 
-/* Nuevo estilo para menú horizontal */
+/* Menú horizontal con mayor separación */
 .menu {
     display: flex;
-    gap: 2rem;
+    gap: 4rem; /* Aumentado de 2rem a 4rem para mayor separación */
 }
 
 .menu a {
     font-weight: 500;
-    padding: 0.5rem 0;
+    padding: 0.7rem 1.2rem; /* Añadido padding horizontal para más separación visual */
     border-bottom: 2px solid transparent;
-    transition: border-color 0.3s;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
+/* Efecto hover mejorado */
 .menu a:hover {
     border-color: #4e9af1;
+    color: #4e9af1;
 }
 
 /* Sección hero */
@@ -227,10 +230,14 @@ footer {
     }
     
     .menu {
-        margin-top: 1rem;
+        margin-top: 1.5rem;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 1rem;
+        gap: 2rem; /* Reducido en móvil pero aún con buena separación */
+    }
+    
+    .menu a {
+        padding: 0.5rem 1rem;
     }
     
     .hero h2 {
