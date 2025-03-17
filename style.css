@@ -16,10 +16,6 @@ a {
     color: #333;
 }
 
-ul {
-    list-style: none;
-}
-
 /* Header y navegación */
 header {
     background-color: #fff;
@@ -44,12 +40,10 @@ nav {
     font-weight: 700;
 }
 
+/* Nuevo estilo para menú horizontal */
 .menu {
     display: flex;
-}
-
-.menu li {
-    margin-left: 2rem;
+    gap: 2rem;
 }
 
 .menu a {
@@ -234,10 +228,9 @@ footer {
     
     .menu {
         margin-top: 1rem;
-    }
-    
-    .menu li {
-        margin: 0 0.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
     }
     
     .hero h2 {
