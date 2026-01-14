@@ -3,106 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Sitio Web | Portafolio</title>
+    <title>Bienvenido</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <!-- Añade esto dentro de la etiqueta <head> -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="theme-color" content="#4e9af1">
+
+    <script>
+        // redirige después de 3 segundos
+        setTimeout(() => {
+            window.location.href = "index.html";
+        }, 3000);
+    </script>
 </head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">
-                <h1>Nestor Edgardo Lopez </h1>
-                <h3>Full Stack Developer</h3>
-<h3> Argentina - España</h3>
-                
-                <a href="df1ARG30011_page-0001.jpg" download="mi-curriculum.jpg">Descargar Curriculum Vitae</a>
-
-            </div>
-            <div class="menu">
-                <a href="#inicio">Inicio</a>
-                <a href="#proyectos">Experiencias</a>
-                <a href="#habilidades">Habilidades</a>
-                <a href="#contacto">Contacto</a> 
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <section id="inicio" class="hero">
-            <div class="hero-content">
-                <h2>Desarrollador Web</h2>
-                <p>Bienvenido a mi portafolio profesional</p>
-                <p>Profesor de educación tecnológica con más de 11 años de experiencia en el sector educativo. Mi misión es fomentar el aprendizaje y
-                    la creatividad de los estudiantes a través de la enseñanza de las herramientas y los conceptos de la informática y el diseño web.
-                    Actualmente imparto clases de programación</p>
-                <a href="#contacto" class="btn">Contáctame</a>
-            </div>
-        </section>
-
-        <section id="proyectos" class="projects">
-            <h2>Experiencias</h2>
-            <div class="project-grid">
-                <div class="project-card">
-<h3>Profesor de Educación Tecnológica.
-</h3>
-<p>Gob. Ciudad De Buenos Aires ·
-jun. 2012 - actualidad C.A.B.A
-Profesor en diversos institutos escolares.Profesor en diversos institutos escolares.
-</p>
-                </div>
-                <div class="project-card">
-                    <img src="img/proyecto2.jpg" alt="Proyecto 2">
-                    <h3>Grupo Caddag</h3>
-                    <p>Full Stack Developer/Analista de Sistemas.
-Jornada parcial oct. 2015 - mar. 2016 · 6 meses Barcelona y alrededores, España Barcelona</p>
-                 
-                </div>
-                <div class="project-card">
-                    <img src="img/proyecto3.jpg" alt="Proyecto 3">
-                    <h3>Proyecto 3</h3>
-                    <p>Descripción del proyecto y tecnologías utilizadas.</p>
-                    <a href="#" class="btn">Ver más</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="habilidades" class="skills">
-            <h2>Mis Habilidades</h2>
-            <div class="skills-container">
-                <div class="skill">HTML5</div>
-                <div class="skill">CSS3</div>
-                <div class="skill">JavaScript</div>
-                <div class="skill">React</div>
-                <div class="skill">Node.js</div>
-                <div class="skill">Git</div>
-            </div>
-        </section>
-
-        <section id="contacto" class="contact">
-            <h2>Contacto</h2>
-            <form id="contact-form">
-                <div class="form-group">
-
-<a href="https://wa.me/5491133163995" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="50" height="50">
-</a>
-
-                </div>
-                <a href="mailto:tu@email.com" class="btn">Contáctame por email</a>
-            </form>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Nestor Edgardo López Martínez. </p><p>Todos los derechos reservados.</p>
-        <div class="social-links">
-            <a href="https://github.com/Edgardlop" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/in/tunombre" target="_blank">LinkedIn</a>
-            <a href="https://twitter.com/tunombre" target="_blank">Twitter</a>
-        </div>
-    </footer>
+<body class="splash">
+    <img src="bienvenida.webp" alt="Bienvenida" class="splash-img">
 </body>
 </html>
