@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenido</title>
+    <title>Bienvenida</title>
     <link rel="stylesheet" href="style.css">
-
-    <script>
-        // redirige después de 3 segundos
-        setTimeout(() => {
-            window.location.href = "index.html";
-        }, 3000);
-    </script>
 </head>
 <body class="splash">
-    <img src="bienvenida.webp" alt="Bienvenida" class="splash-img">
+
+    <video
+        class="splash-video"
+        autoplay
+        muted
+        playsinline
+        onended="window.location.href='home.html'">
+        
+        <source src="https://mgmtetsktabqlkxxlews.supabase.co/storage/v1/object/sign/web%20sal/Bienvenida.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jMjk4OWFkMC04NmE3LTRjNjAtYmNlNS1mMTY3YjNhYWVjNjAiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ3ZWIgc2FsL0JpZW52ZW5pZGEubXA0IiwiaWF0IjoxNzY4MzYzNTQ3LCJleHAiOjE3OTk4OTk1NDd9.GWljDKj3Ta3hI-BRx4pCgtXom4z1WScRUX0576_JY6A"
+                type="video/mp4">
+        Tu navegador no soporta video HTML5.
+    </video>
+
 </body>
 </html>
