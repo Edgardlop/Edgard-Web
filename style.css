@@ -16,6 +16,17 @@ a {
     color: #333;
 }
 
+.skip {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 16px;
+    font-size: 14px;
+    border-radius: 20px;
+    border: none;
+    background: rgba(0,0,0,.6);
+    color: white;
+}
 
 
 /* MOBILE FIRST */
