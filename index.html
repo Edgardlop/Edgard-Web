@@ -1,52 +1,53 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nestor Lopez | Full Stack Developer</title>
-    <link rel="stylesheet" href="landing-style.css">
-    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+    <title>Nestor Lopez | Dev & Design</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="video-background">
-        <video autoplay muted loop playsinline poster="img/fallback-bg.jpg">
-            <source src="TU_URL_DE_SUPABASE_AQUI" type="video/mp4">
-        </video>
-        <div class="overlay"></div>
-    </div>
 
-    <main class="content">
-        <header class="profile">
-            <div class="avatar">NL</div> <h1>Nestor Edgardo Lopez</h1>
-            <p class="tagline">Full Stack Developer & Profesor de Tecnología</p>
-            <p class="location">🇦🇷 Argentina - 🇪🇸 España</p>
+    <main class="main-container">
+        <header class="hero-minimal">
+            <div class="badge">Disponible para proyectos</div>
+            <h1>Nestor Lopez</h1>
+            <h2 class="typing">Desarrollador Full Stack & Diseñador UI</h2>
+            <p>Fusionando 11 años de pedagogía tecnológica con desarrollo moderno.</p>
         </header>
 
-        <section class="links-grid">
-            <a href="home.html" class="btn-link principal">
-                <span>📂 Ver Portfolio & Experiencia</span>
-            </a>
+        <section class="bento-grid">
             
-            <a href="https://wa.me/5491133163995" target="_blank" class="btn-link">
-                <span>💬 Contacto por WhatsApp</span>
+            <a href="home.html" class="bento-item portfolio">
+                <div class="icon">📂</div>
+                <span>Ver Proyectos</span>
+                <p>Explora mi trabajo reciente</p>
             </a>
 
-            <a href="mailto:tu-email@correo.com" class="btn-link">
-                <span>✉️ Enviar Email</span>
+            <div class="bento-row">
+                <a href="https://wa.me/5491133163995" class="bento-item whatsapp">
+                    <div class="icon">💬</div>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="mailto:tu@email.com" class="bento-item email">
+                    <div class="icon">✉️</div>
+                    <span>Email</span>
+                </a>
+            </div>
+
+            <a href="cv.pdf" download class="bento-item cv">
+                <div class="icon">📄</div>
+                <span>Descargar CV</span>
+                <p>Formato PDF - 2026</p>
             </a>
 
-            <a href="df1ARG30011_page-0001.jpg" download class="btn-link cv">
-                <span>📄 Descargar Currículum</span>
-            </a>
         </section>
 
-        <footer>
-            <div class="social-mini">
-                <a href="https://github.com/Edgardlop">GitHub</a>
-                <a href="https://linkedin.com/in/tu-perfil">LinkedIn</a>
-            </div>
+        <footer class="social-footer">
+            <a href="#">LinkedIn</a>
+            <a href="#">GitHub</a>
         </footer>
     </main>
+
 </body>
 </html>
