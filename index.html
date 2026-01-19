@@ -3,58 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nestor Lopez | Dev & Design</title>
+    <title>Nestor Lopez | Portafolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="brittany-style">
+    <div class="pointer-light"></div>
 
-    <main class="main-container">
-        <header class="hero-minimal">
-            <div class="badge">Disponible para proyectos</div>
-            <h1>Nestor Lopez</h1>
-            <h2 class="typing">Desarrollador Full Stack & Diseñador UI</h2>
-            <p>Fusionando 11 años de pedagogía tecnológica con desarrollo moderno.</p>
+    <main class="container">
+        <header class="hero">
+            <p class="greeting">Hola, mi nombre es</p>
+            <h1>Nestor Lopez.</h1>
+            <h2>Desarrollador Full Stack & Diseñador.</h2>
+            <p class="description">
+                Fusiono 11 años de pedagogía tecnológica con desarrollo web moderno. 
+                Actualmente me enfoco en crear soluciones digitales accesibles y de alto impacto.
+            </p>
         </header>
 
-      <section class="bento-grid">
-    <a href="home.html" class="btn-card principal">
-        <div class="btn-content">
-            <span class="btn-icon">🚀</span>
-            <div class="btn-text">
-                <span class="title">MI PORTAFOLIO</span>
-                <span class="subtitle">Experiencia y Proyectos</span>
+        <nav class="action-links">
+            <a href="home.html" class="btn-primary">Ver Portafolio Completo</a>
+            
+            <div class="social-grid">
+                <a href="https://wa.me/5491133163995" class="social-item">WhatsApp</a>
+                <a href="mailto:tu@email.com" class="social-item">Email</a>
+                <a href="cv.pdf" download class="social-item">Currículum</a>
             </div>
-        </div>
-        <span class="arrow">→</span>
-    </a>
-
-    <div class="bento-row">
-        <a href="https://wa.me/5491133163995" class="btn-card whatsapp">
-            <span class="btn-icon">💬</span>
-            <span class="title">WhatsApp</span>
-        </a>
-        <a href="mailto:tu@email.com" class="btn-card email">
-            <span class="btn-icon">✉️</span>
-            <span class="title">Email</span>
-        </a>
-    </div>
-
-    <a href="cv.pdf" download class="btn-card cv">
-        <div class="btn-content">
-            <span class="btn-icon">📥</span>
-            <div class="btn-text">
-                <span class="title">DESCARGAR CV</span>
-                <span class="subtitle">Versión PDF actualizada</span>
-            </div>
-        </div>
-    </a>
-</section>
-
-        <footer class="social-footer">
-            <a href="#">LinkedIn</a>
-            <a href="#">GitHub</a>
-        </footer>
+        </nav>
     </main>
 
+    <script>
+        // Script para el efecto de luz que sigue al ratón
+        const light = document.querySelector('.pointer-light');
+        document.addEventListener('mousemove', (e) => {
+            light.style.setProperty('--x', e.clientX + 'px');
+            light.style.setProperty('--y', e.clientY + 'px');
+        });
+    </script>
 </body>
 </html>
