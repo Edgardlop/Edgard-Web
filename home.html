@@ -3,113 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Sitio Web | Portafolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <!-- Añade esto dentro de la etiqueta <head> -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="theme-color" content="#4e9af1">
-    <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#000000">
+    <title>Nestor Lopez | Full Stack Developer</title>
+    <link rel="stylesheet" href="home-style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <h1>Nestor Edgardo Lopez </h1>
-                <h3>Full Stack Developer</h3>
-<h3> Argentina - España</h3>
-                
-                <a href="df1ARG30011_page-0001.jpg" download="mi-curriculum.jpg">Descargar Curriculum Vitae</a>
 
-            </div>
-            <div class="menu">
-                <a href="#inicio">Inicio</a>
-                <a href="#proyectos">Experiencias</a>
-                <a href="#habilidades">Habilidades</a>
-                <a href="#contacto">Contacto</a> 
-            </div>
-        </nav>
-    </header>
+    <nav class="top-nav">
+        <a href="index.html" class="back-link">← Volver</a>
+        <div class="nav-links">
+            <a href="#experiencia">Experiencia</a>
+            <a href="#habilidades">Skills</a>
+        </div>
+    </nav>
 
-    <main>
-        <section id="inicio" class="hero">
-            <div class="hero-content">
-                <h2>Desarrollador Web</h2>
-                <p>Bienvenido a mi portafolio profesional</p>
-                <p>Profesor de educación tecnológica con más de 11 años de experiencia en el sector educativo. Mi misión es fomentar el aprendizaje y
-                    la creatividad de los estudiantes a través de la enseñanza de las herramientas y los conceptos de la informática y el diseño web.
-                    Actualmente imparto clases de programación</p>
-                <a href="#contacto" class="btn">Contáctame</a>
-            </div>
+    <main class="wrapper">
+        <section class="intro">
+            <h1>Desarrollador Full Stack & Educador.</h1>
+            <p class="bio">
+                Con base en Argentina y España, combino la lógica de la programación con 11 años de experiencia pedagógica para construir productos digitales que tengan sentido.
+            </p>
         </section>
 
-        <section id="proyectos" class="projects">
-            <h2>Experiencias</h2>
-            <div class="project-grid">
-                <div class="project-card">
-<h3>Profesor de Educación Tecnológica.
-</h3>
-<p>Gob. Ciudad De Buenos Aires ·
-jun. 2012 - actualidad C.A.B.A
-Profesor en diversos institutos escolares.Profesor en diversos institutos escolares.
-</p>
+        <section id="experiencia" class="section">
+            <h3 class="section-title">Experiencia Seleccionada</h3>
+            
+            <div class="project-item">
+                <span class="year">2012 — Pres.</span>
+                <div class="project-info">
+                    <h3>Profesor de Tecnología</h3>
+                    <p>Liderando la formación técnica y el pensamiento computacional en instituciones de C.A.B.A.</p>
                 </div>
-                <div class="project-card">
-                    <img src="img/proyecto2.jpg" alt="Proyecto 2">
-                    <h3>Grupo Caddag</h3>
-                    <p>Full Stack Developer/Analista de Sistemas.
-Jornada parcial oct. 2015 - mar. 2016 · 6 meses Barcelona y alrededores, España Barcelona</p>
-                 
-                </div>
-                <div class="project-card">
-                    <img src="img/proyecto3.jpg" alt="Proyecto 3">
-                    <h3>Proyecto 3</h3>
-                    <p>Descripción del proyecto y tecnologías utilizadas.</p>
-                    <a href="#" class="btn">Ver más</a>
+            </div>
+
+            <div class="project-item">
+                <span class="year">2015 — 2016</span>
+                <div class="project-info">
+                    <h3>Full Stack Dev (Junior)</h3>
+                    <p>Desarrollo de sistemas internos y análisis en Grupo Caddag, Barcelona.</p>
                 </div>
             </div>
         </section>
 
-        <section id="habilidades" class="skills">
-            <h2>Mis Habilidades</h2>
-            <div class="skills-container">
-                <div class="skill">HTML5</div>
-                <div class="skill">CSS3</div>
-                <div class="skill">JavaScript</div>
-                <div class="skill">React</div>
-                <div class="skill">Node.js</div>
-                <div class="skill">Git</div>
-            </div>
-        </section>
-
-        <section id="contacto" class="contact">
-            <h2>Contacto</h2>
-            <form id="contact-form">
-                <div class="form-group">
-
-<a href="https://wa.me/5491133163995" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="50" height="50">
-</a>
-
-                </div>
-                <a href="mailto:tu@email.com" class="btn">Contáctame por email</a>
-            </form>
+        <section id="habilidades" class="section">
+            <h3 class="section-title">Habilidades Técnicas</h3>
+            <ul class="skills-list">
+                <li>JavaScript (ES6+)</li>
+                <li>React</li>
+                <li>Node.js</li>
+                <li>CSS / UI Design</li>
+                <li>Git & GitHub</li>
+            </ul>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Nestor Edgardo López Martínez. </p><p>Todos los derechos reservados.</p>
-        <div class="social-links">
-            <a href="https://github.com/Edgardlop" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/in/tunombre" target="_blank">LinkedIn</a>
-            <a href="https://twitter.com/tunombre" target="_blank">Twitter</a>
-        </div>
+    <footer class="footer-minimal">
+        <p>© 2026 Nestor Lopez</p>
+        <a href="mailto:tu@email.com">Dime hola →</a>
     </footer>
-    <script>
-if ('serviceWorker' in navigator) {
-navigator.serviceWorker.register('service-worker.js');
-}
-</script>
+
 </body>
 </html>
