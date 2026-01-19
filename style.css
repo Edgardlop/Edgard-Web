@@ -99,3 +99,130 @@ h2 {
     .container { text-align: left; }
     .social-grid { flex-direction: column; gap: 15px; }
 }
+
+:root {
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --dim: #757575;
+    --border: #eeeeee;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+}
+
+.wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 24px;
+}
+
+/* Navegación Superior */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px;
+    position: fixed;
+    top: 0; width: 100%;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(5px);
+    z-index: 100;
+}
+
+.top-nav a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Introducción */
+.intro {
+    margin-bottom: 100px;
+}
+
+.intro h1 {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+}
+
+.bio {
+    font-size: 1.5rem;
+    color: var(--dim);
+    max-width: 600px;
+}
+
+/* Secciones */
+.section {
+    padding: 60px 0;
+    border-top: 1px solid var(--border);
+}
+
+.section-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--dim);
+    margin-bottom: 40px;
+}
+
+/* Items de Experiencia */
+.project-item {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    margin-bottom: 40px;
+}
+
+.year {
+    color: var(--dim);
+    font-size: 0.9rem;
+}
+
+.project-info h3 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.project-info p {
+    color: var(--dim);
+}
+
+/* Skills */
+.skills-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+}
+
+.skills-list li {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Mobile First Adjustments */
+@media (max-width: 600px) {
+    .project-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    .intro h1 { font-size: 2.5rem; }
+    .bio { font-size: 1.2rem; }
+}
+
+.footer-minimal {
+    padding: 60px 24px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 0 auto;
+}
