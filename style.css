@@ -1,117 +1,101 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', system-ui, sans-serif;
+:root {
+    --dark-navy: #0a192f;
+    --navy: #112240;
+    --light-slate: #a8b2d1;
+    --white: #e6f1ff;
+    --green: #64ffda; /* El color de acento de Brittany */
+    --font-sans: 'Inter', 'San Francisco', sans-serif;
 }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background: #000;
-    color: white;
-    height: 100vh;
+    background-color: var(--dark-navy);
+    color: var(--light-slate);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    overflow: hidden;
+    justify-content: center;
+    overflow-x: hidden;
 }
 
-/* Fondo de Video */
-.video-background {
+/* Efecto de luz de fondo (Efecto Brittany Chiang) */
+.pointer-light {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 0;
+    background: radial-gradient(600px at var(--x, 0px) var(--y, 0px), rgba(29, 78, 216, 0.15), transparent 80%);
+    pointer-events: none;
 }
 
-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.65); /* Oscurece el video para que el texto resalte */
-}
-
-/* Contenido Principal */
-.content {
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
+.container {
+    max-width: 600px;
+    padding: 40px 25px;
     z-index: 1;
 }
 
-.profile {
-    margin-bottom: 2rem;
+.greeting {
+    color: var(--green);
+    font-family: monospace;
+    margin-bottom: 20px;
 }
 
-.avatar {
-    width: 80px;
-    height: 80px;
-    background: #4e9af1;
-    border-radius: 50%;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    border: 3px solid rgba(255,255,255,0.2);
+h1 {
+    font-size: clamp(40px, 8vw, 70px);
+    color: var(--white);
+    font-weight: 700;
 }
 
-h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
-.tagline { color: #4e9af1; font-weight: 500; margin-bottom: 0.5rem; }
-.location { font-size: 0.9rem; opacity: 0.8; }
-
-/* Botones estilo Tarjeta */
-.links-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+h2 {
+    font-size: clamp(30px, 6vw, 50px);
+    color: var(--light-slate);
+    margin-bottom: 25px;
 }
 
-.btn-link {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px); /* Efecto cristal */
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 1.2rem;
-    border-radius: 15px;
-    color: white;
+.description {
+    max-width: 500px;
+    margin-bottom: 50px;
+}
+
+/* Botones y Enlaces */
+.btn-primary {
+    display: inline-block;
+    padding: 18px 30px;
+    border: 1px solid var(--green);
+    color: var(--green);
     text-decoration: none;
-    font-weight: 500;
+    border-radius: 4px;
+    font-family: monospace;
     transition: all 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.btn-primary:hover {
+    background: rgba(100, 255, 218, 0.1);
+}
+
+.social-grid {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.btn-link:active {
-    transform: scale(0.95);
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.btn-link.principal {
-    background: #4e9af1;
-    border: none;
-}
-
-.social-mini {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-}
-
-.social-mini a {
-    color: white;
-    font-size: 0.8rem;
-    opacity: 0.6;
+.social-item {
+    color: var(--white);
     text-decoration: none;
+    font-size: 0.9rem;
+    font-family: monospace;
+    transition: color 0.3s;
+}
+
+.social-item:hover {
+    color: var(--green);
+}
+
+/* Mobile First ajustes */
+@media (max-width: 480px) {
+    .container { text-align: left; }
+    .social-grid { flex-direction: column; gap: 15px; }
 }
