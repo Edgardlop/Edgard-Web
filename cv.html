@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV en Línea - Edgardo Lopez</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .cv-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: var(--accent);
+        }
+
+        .back-link i {
+            margin-right: 0.5rem;
+            width: 16px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 3rem 0 1.5rem;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            width: 20px;
+        }
+
+        .timeline-item {
+            margin-bottom: 2.5rem;
+            padding-left: 1.5rem;
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -4px;
+            top: 8px;
+            width: 7px;
+            height: 7px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .item-role {
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: block;
+        }
+
+        .item-company {
+            color: var(--text-primary);
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        .item-date {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="spotlight" id="spotlight"></div>
+
+    <div class="cv-container">
+        <a href="index.html" class="back-link">
+            <i data-lucide="arrow-left"></i> Volver al inicio
+        </a>
+
+        <header class="profile-section" style="margin-bottom: 2rem;">
+            <h1 id="name">Edgardo Lopez</h1>
+            <div class="titles">
+                <span class="main-title">Full Stack Developer</span>
+                <span class="sub-title">Profesor de Tecnología y Programación</span>
+            </div>
+        </header>
+
+        <!-- Experiencia -->
+        <h2 class="section-title"><i data-lucide="briefcase"></i> Experiencia</h2>
+
+        <div class="timeline-item">
+            <span class="item-role">Profesor de Educación Tecnológica</span>
+            <span class="item-company">Gob. Ciudad De Buenos Aires</span>
+            <span class="item-date">Jun. 2012 - Actualidad (14 años)</span>
+            <p class="item-desc">Liderazgo en integración de tecnología educativa en diversos institutos. Actualmente
+                desempeñando funciones en EEM 1 DE 20.</p>
+        </div>
+
+        <div class="timeline-item">
+            <span class="item-role">Full Stack Developer / Analista de Sistemas</span>
+            <span class="item-company">Grupo Caddag</span>
+            <span class="item-date">Oct. 2015 - Mar. 2016</span>
+            <p class="item-desc">Desarrollo integral de aplicaciones web y análisis de sistemas en Barcelona.</p>
+        </div>
+
+        <div class="timeline-item">
+            <span class="item-role">Analista de Sistemas</span>
+            <span class="item-company">Catalonia, Spain</span>
+            <span class="item-date">Oct. 2015 - Feb. 2016</span>
+            <p class="item-desc">Mantenimiento de sistemas generales (ABM) y control de flujos de datos.</p>
+        </div>
+
+        <div class="timeline-item">
+            <span class="item-role">Information Technology Specialist</span>
+            <span class="item-company">EIS Group</span>
+            <span class="item-date">Feb. 2015 - Jun. 2015</span>
+            <p class="item-desc">Especialista en soporte y administración de infraestructura tecnológica.</p>
+        </div>
+
+        <!-- Educación -->
+        <h2 class="section-title"><i data-lucide="graduation-cap"></i> Educación</h2>
+
+        <div class="timeline-item">
+            <span class="item-role">Full-Stack Web Developer</span>
+            <span class="item-company">EducacionIT</span>
+            <span class="item-date">2018 - 2019</span>
+            <p class="item-desc">Entrenamiento intensivo en PHP, MySQL, JavaScript, HTML5 y CSS3.</p>
+        </div>
+
+        <div class="timeline-item">
+            <span class="item-role">Diseño Web y Gráfico</span>
+            <span class="item-company">Torre Barrina, Ayto. de L'Hospitalet</span>
+            <span class="item-date">2016</span>
+            <p class="item-desc">Tratamiento de imágenes y maquetación web profesional.</p>
+        </div>
+
+        <!-- Habilidades -->
+        <h2 class="section-title"><i data-lucide="code"></i> Skills técnicos</h2>
+        <div class="skills-grid">
+            <div class="skill-tag">Full Stack PHP</div>
+            <div class="skill-tag">JavaScript / jQuery</div>
+            <div class="skill-tag">MySQL</div>
+            <div class="skill-tag">HTML5 / CSS3</div>
+            <div class="skill-tag">Git / GitHub</div>
+            <div class="skill-tag">SCRUM</div>
+            <div class="skill-tag">Node.js</div>
+            <div class="skill-tag">Testing QA</div>
+        </div>
+
+        <footer class="footer">
+            <p>Pasión por la tecnología y la educación.</p>
+        </footer>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        const spotlight = document.getElementById('spotlight');
+        document.addEventListener('mousemove', (e) => {
+            document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
+            document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
+        });
+        document.addEventListener('touchmove', (e) => {
+            document.documentElement.style.setProperty('--mouse-x', `${e.touches[0].clientX}px`);
+            document.documentElement.style.setProperty('--mouse-y', `${e.touches[0].clientY}px`);
+        });
+    </script>
+</body>
+
+</html>
