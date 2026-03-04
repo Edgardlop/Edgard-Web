@@ -1,43 +1,94 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nestor Lopez | Portafolio</title>
+    <title>Edgard - Full Stack Developer & Profe de Tecnología</title>
+    <meta name="description"
+        content="Landing page profesional de Edgard, Full Stack Developer y Profesor de Tecnología.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="brittany-style">
-    <div class="pointer-light"></div>
+
+<body>
+    <!-- Efecto de brillo que sigue al ratón -->
+    <div class="spotlight" id="spotlight"></div>
 
     <main class="container">
-        <header class="hero">
-            <p class="greeting">Hola, mi nombre es</p>
-            <h1>Nestor Lopez.</h1>
-            <h2>Desarrollador Full Stack & Diseñador.</h2>
-            <p class="description">
-                Fusiono 11 años de pedagogía tecnológica con desarrollo web moderno. 
-                Actualmente me enfoco en crear soluciones digitales accesibles y de alto impacto.
-            </p>
+        <header class="profile-section">
+            <div class="avatar-container">
+                <div class="avatar-placeholder">EL</div>
+            </div>
+            <h1 id="name">Edgardo Lopez</h1>
+            <div class="titles">
+                <span class="main-title">Full Stack Developer</span>
+                <span class="sub-title">Profesor de Tecnología y Programación</span>
+            </div>
         </header>
 
-        <nav class="action-links">
-            <a href="home.html" class="btn-primary">Ver Portafolio Completo</a>
-            
-            <div class="social-grid">
-                <a href="https://wa.me/5491133163995" class="social-item">WhatsApp</a>
-                <a href="mailto:tu@email.com" class="social-item">Email</a>
-                <a href="cv.pdf" download class="social-item">Currículum</a>
-            </div>
-        </nav>
+        <section class="links-container">
+            <a href="cv.html" class="link-card" id="cv-online">
+                <i data-lucide="external-link"></i>
+                <span>CV en Línea</span>
+            </a>
+
+            <a href="cv-edgardo-lopez.pdf" class="link-card" id="download-pdf" download>
+                <i data-lucide="file-down"></i>
+                <span>Descargar CV (PDF)</span>
+            </a>
+
+            <a href="cv-edgardo-lopez.jpg" class="link-card" id="download-jpg" download>
+                <i data-lucide="image"></i>
+                <span>Descargar CV (JPG)</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/tu-perfil" class="link-card linkedin" id="linkedin-link"
+                target="_blank">
+                <i data-lucide="linkedin"></i>
+                <span>LinkedIn</span>
+            </a>
+
+            <a href="https://wa.me/5491133163995" class="link-card whatsapp" id="whatsapp-link">
+                <i data-lucide="message-circle"></i>
+                <span>WhatsApp</span>
+            </a>
+
+            <a href="mailto:nelm11@live.com" class="link-card email" id="email-link">
+                <i data-lucide="mail"></i>
+                <span>nelm11@live.com</span>
+            </a>
+        </section>
+
+        <footer class="footer">
+            <p>Full Stack • Educación • Tecnología</p>
+        </footer>
     </main>
 
     <script>
-        // Script para el efecto de luz que sigue al ratón
-        const light = document.querySelector('.pointer-light');
+        // Inicializar iconos
+        lucide.createIcons();
+
+        // Efecto Spotlight
+        const spotlight = document.getElementById('spotlight');
         document.addEventListener('mousemove', (e) => {
-            light.style.setProperty('--x', e.clientX + 'px');
-            light.style.setProperty('--y', e.clientY + 'px');
+            const x = e.clientX;
+            const y = e.clientY;
+            document.documentElement.style.setProperty('--mouse-x', `${x}px`);
+            document.documentElement.style.setProperty('--mouse-y', `${y}px`);
+        });
+
+        // Soporte para touch
+        document.addEventListener('touchmove', (e) => {
+            const x = e.touches[0].clientX;
+            const y = e.touches[0].clientY;
+            document.documentElement.style.setProperty('--mouse-x', `${x}px`);
+            document.documentElement.style.setProperty('--mouse-y', `${y}px`);
         });
     </script>
 </body>
+
 </html>
