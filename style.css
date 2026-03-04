@@ -1,96 +1,208 @@
-/* --- VARIABLES GLOBALES --- */
 :root {
-    /* Paleta Oscura (Landing) */
-    --dark-navy: #0a192f;
-    --navy: #112240;
-    --light-slate: #a8b2d1;
-    --white: #e6f1ff;
-    --green: #64ffda;
-    
-    /* Paleta Clara (Home) */
-    --bg-light: #ffffff;
-    --text-dark: #1a1a1a;
-    --dim: #757575;
-    --border: #eeeeee;
+    --bg-color: #030712;
+    --text-primary: #f8fafc;
+    --text-secondary: #64748b;
+    --accent: #818cf8;
+    --glow-color: rgba(99, 102, 241, 0.15);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
 
-/* --- ESTILO PARA LA LANDING (Clase .brittany-style en el body) --- */
-body.brittany-style {
-    background-color: var(--dark-navy);
-    color: var(--light-slate);
-    font-family: 'Inter', sans-serif;
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
     min-height: 100vh;
+}
+
+/* Efecto Spotlight que sigue al ratón */
+.spotlight {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+            var(--glow-color),
+            transparent 80%);
+    z-index: 0;
+}
+
+.container {
+    position: relative;
+    max-width: 440px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    z-index: 1;
+}
+
+/* Header Section */
+.profile-section {
+    text-align: left;
+    margin-bottom: 4rem;
+    animation: fadeIn 1s ease-out;
+}
+
+.avatar-container {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--accent), #c084fc);
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow-x: hidden;
+    font-size: 1.5rem;
+    font-weight: 800;
 }
 
-/* Efecto de luz corregido (más pequeño y visible) */
-.pointer-light {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    z-index: 0;
-    /* Reducido de 600px a 300px para que se note el círculo */
-    background: radial-gradient(300px at var(--x, 0px) var(--y, 0px), rgba(100, 255, 218, 0.15), transparent 80%);
-    pointer-events: none;
+#name {
+    font-size: 2.25rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    margin-bottom: 0.25rem;
 }
 
-.brittany-style h1 { color: var(--white); font-size: clamp(32px, 7vw, 60px); }
-.brittany-style h2 { color: var(--light-slate); font-size: clamp(24px, 5vw, 40px); }
+.titles {
+    display: flex;
+    flex-direction: column;
+}
 
-.btn-primary {
-    display: inline-block;
-    padding: 15px 25px;
-    border: 1px solid var(--green);
-    color: var(--green);
+.main-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.01em;
+}
+
+.sub-title {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-top: 0.2rem;
+}
+
+/* Links Section - SIN RECUADROS */
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    /* Espacio limpio entre ítems */
+}
+
+.link-card {
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    border-radius: 4px;
-    font-family: monospace;
-    z-index: 10;
-    position: relative;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
-/* --- ESTILO PARA EL HOME (Clase .home-style en el body) --- */
-body.home-style {
-    background-color: var(--bg-light);
-    color: var(--text-dark);
-    font-family: -apple-system, system-ui, sans-serif;
-    line-height: 1.6;
-    display: block; /* Importante para que el scroll funcione */
+.link-card i {
+    width: 20px;
+    height: 20px;
+    margin-right: 1.5rem;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
 }
 
-.wrapper {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 100px 24px;
+.link-card span {
+    font-size: 1.05rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
 }
 
-.home-style h1 {
-    font-size: clamp(2rem, 8vw, 3.5rem);
-    color: var(--text-dark);
-    letter-spacing: -2px;
-    margin-bottom: 20px;
+/* Efectos al pasar el dedo o mouse */
+.link-card:hover,
+.link-card:active {
+    color: var(--accent);
+    padding-left: 0.5rem;
+    border-bottom-color: var(--accent);
 }
 
-.bio { font-size: 1.2rem; color: var(--dim); max-width: 600px; }
-
-/* Secciones del Home */
-.section { padding: 40px 0; border-top: 1px solid var(--border); margin-top: 40px; }
-.section-title { font-size: 0.8rem; text-transform: uppercase; color: var(--dim); margin-bottom: 30px; }
-
-.project-item {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    margin-bottom: 30px;
+.link-card:hover i,
+.link-card:active i {
+    color: var(--accent);
+    transform: scale(1.1);
 }
 
-.year { color: var(--dim); font-size: 0.9rem; }
+/* Estilo para los ítems resaltados */
+.link-card.linkedin:hover,
+.link-card.linkedin:active {
+    color: #0077b5;
+    border-bottom-color: #0077b5;
+}
 
-/* Ajustes Móvil */
-@media (max-width: 600px) {
-    .project-item { grid-template-columns: 1fr; gap: 5px; }
-    .brittany-style .container { padding: 20px; }
+.link-card.linkedin:hover i,
+.link-card.linkedin:active i {
+    color: #0077b5;
+}
+
+.link-card.whatsapp:hover,
+.link-card.whatsapp:active {
+    color: #4ade80;
+    border-bottom-color: #4ade80;
+}
+
+.link-card.whatsapp:hover i,
+.link-card.whatsapp:active i {
+    color: #4ade80;
+}
+
+.link-card.email:hover,
+.link-card.email:active {
+    color: #fb7185;
+    border-bottom-color: #fb7185;
+}
+
+.link-card.email:hover i,
+.link-card.email:active i {
+    color: #fb7185;
+}
+
+/* Footer */
+.footer {
+    margin-top: auto;
+    padding: 4rem 0 1rem;
+    text-align: left;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.6;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 370px) {
+    #name {
+        font-size: 1.8rem;
+    }
+
+    .container {
+        padding: 3rem 1.25rem;
+    }
 }
