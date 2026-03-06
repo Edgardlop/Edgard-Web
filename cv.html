@@ -4,209 +4,667 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV en Línea - Edgardo Lopez</title>
+    <title>CV - Nestor Edgardo Lopez Martinez</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="style.css">
     <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --white: #ffffff;
+            --glass: rgba(30, 41, 59, 0.7);
+            --border: rgba(255, 255, 255, 0.08);
+        }
+
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+                padding: 0 !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .cv-container {
+                box-shadow: none !important;
+                margin: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                background: white !important;
+                border: none !important;
+            }
+
+            .section-title {
+                color: #0369a1 !important;
+                border-bottom: 2px solid #e2e8f0 !important;
+            }
+
+            .item-role {
+                color: #0f172a !important;
+            }
+
+            .item-company {
+                color: #334155 !important;
+            }
+
+            .skill-tag {
+                border: 1px solid #e2e8f0 !important;
+                color: #1e293b !important;
+                background: #f8fafc !important;
+            }
+
+            :root {
+                --primary: #ffffff;
+                --text-main: #0f172a;
+                --text-muted: #475569;
+                --accent: #0284c7;
+            }
+
+            .page-break {
+                page-break-before: always;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+            background-color: var(--primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            background-image:
+                radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(56, 189, 248, 0.05) 0%, transparent 50%);
+        }
+
         .cv-container {
-            max-width: 600px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 4rem 1.5rem;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            padding: 3.5rem 3rem;
             position: relative;
-            z-index: 1;
+            border-bottom: 1px solid var(--border);
         }
 
-        .back-link {
-            display: inline-flex;
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        }
+
+        .header-grid {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
             align-items: center;
-            color: var(--text-secondary);
-            text-decoration: none;
-            margin-bottom: 2rem;
-            font-size: 0.9rem;
-            transition: color 0.3s;
         }
 
-        .back-link:hover {
+        h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .titles {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .main-title {
+            color: var(--accent);
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+            background: rgba(15, 23, 42, 0.4);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-item:hover {
             color: var(--accent);
         }
 
-        .back-link i {
-            margin-right: 0.5rem;
-            width: 16px;
+        .contact-item i {
+            width: 18px;
+            color: var(--accent);
+        }
+
+        .main-content {
+            padding: 3rem;
+            display: grid;
+            grid-template-columns: 2fr 1.2fr;
+            gap: 3rem;
         }
 
         .section-title {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: 700;
-            margin: 3rem 0 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
             color: var(--accent);
+            margin-bottom: 2rem;
             display: flex;
             align-items: center;
-            gap: 10px;
-        }
-
-        .section-title i {
-            width: 20px;
-        }
-
-        .timeline-item {
-            margin-bottom: 2.5rem;
-            padding-left: 1.5rem;
-            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            gap: 0.75rem;
             position: relative;
         }
 
-        .timeline-item::before {
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .experience-item {
+            margin-bottom: 2.5rem;
+            position: relative;
+            padding-left: 2rem;
+            border-left: 1px solid var(--border);
+        }
+
+        .experience-item::before {
             content: '';
             position: absolute;
-            left: -4px;
-            top: 8px;
-            width: 7px;
-            height: 7px;
+            left: -5px;
+            top: 10px;
+            width: 9px;
+            height: 9px;
             background: var(--accent);
-            border-radius: 50%;
+            border-radius: 2px;
+            box-shadow: 0 0 10px var(--accent);
         }
 
-        .item-role {
-            font-weight: 600;
-            font-size: 1.1rem;
-            display: block;
-        }
-
-        .item-company {
-            color: var(--text-primary);
-            opacity: 0.8;
-            font-size: 0.95rem;
-        }
-
-        .item-date {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            display: block;
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
             margin-bottom: 0.5rem;
         }
 
-        .item-desc {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.5;
+        .item-role {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-main);
         }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 1rem;
+        .item-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .item-company {
+            display: block;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .item-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .item-details {
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+
+        .item-details li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.25rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .item-details li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .skills-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-group h3 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
 
         .skill-tag {
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 0.5rem 1rem;
+            border: 1px solid var(--border);
+            padding: 0.4rem 0.8rem;
             border-radius: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            transition: all 0.2s;
+        }
+
+        .skill-tag:hover {
+            background: var(--accent-glow);
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        .education-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .edu-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+
+        .edu-meta {
             font-size: 0.85rem;
-            text-align: center;
-            color: var(--text-secondary);
+            color: var(--text-muted);
+        }
+
+        .edu-date {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .lang-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .lang-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .lang-level {
+            font-size: 0.85rem;
+            color: var(--accent);
+            background: var(--accent-glow);
+            padding: 0.25rem 0.75rem;
+            border-radius: 99px;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 0.75rem 1.25rem;
+            border-radius: 12px;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+            z-index: 100;
+        }
+
+        .back-btn:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .print-btn {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: var(--accent);
+            border: none;
+            padding: 0.75rem 1.25rem;
+            border-radius: 12px;
+            color: var(--primary);
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+            z-index: 100;
+        }
+
+        .print-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        @media (max-width: 850px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                padding: 2.5rem 2rem;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .back-btn,
+            .print-btn {
+                position: static;
+                margin-bottom: 1rem;
+                display: inline-flex;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="spotlight" id="spotlight"></div>
+    <a href="index.html" class="back-btn no-print">
+        <i data-lucide="arrow-left"></i> Volver
+    </a>
+    <button onclick="window.print()" class="print-btn no-print">
+        <i data-lucide="printer"></i> Imprimir PDF
+    </button>
 
     <div class="cv-container">
-        <a href="index.html" class="back-link">
-            <i data-lucide="arrow-left"></i> Volver al inicio
-        </a>
+        <header>
+            <div class="header-grid">
+                <div>
+                    <h1>Nestor Edgardo Lopez Martinez</h1>
+                    <div class="titles">
+                        <span class="main-title">Full Stack Developer</span>
+                        <span class="main-title">Profesor de Tecnología Aplicada</span>
+                    </div>
+                </div>
+            </div>
 
-        <header class="profile-section" style="margin-bottom: 2rem;">
-            <h1 id="name">Edgardo Lopez</h1>
-            <div class="titles">
-                <span class="main-title">Full Stack Developer</span>
-                <span class="sub-title">Profesor de Tecnología y Programación</span>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i data-lucide="map-pin"></i>
+                    <span>L'Hospitalet de Llobregat, Barcelona 08906</span>
+                </div>
+                <a href="mailto:nelm11@live.com" class="contact-item">
+                    <i data-lucide="mail"></i>
+                    <span>nelm11@live.com</span>
+                </a>
+                <div class="contact-item">
+                    <i data-lucide="phone"></i>
+                    <span>+54 11 3316 3995 (Preferente)</span>
+                </div>
+                <a href="https://edgardlop.github.io/Edgard-Web/" class="contact-item" target="_blank">
+                    <i data-lucide="globe"></i>
+                    <span>edgardlop.github.io/Edgard-Web</span>
+                </a>
+                <div class="contact-item">
+                    <i data-lucide="calendar"></i>
+                    <span>Nacimiento: 01/02/1968</span>
+                </div>
+                <div class="contact-item">
+                    <i data-lucide="briefcase"></i>
+                    <span>Busco activamente</span>
+                </div>
             </div>
         </header>
 
-        <!-- Experiencia -->
-        <h2 class="section-title"><i data-lucide="briefcase"></i> Experiencia</h2>
+        <main class="main-content">
+            <section class="experience">
+                <h2 class="section-title"><i data-lucide="history"></i> Experiencia Laboral</h2>
 
-        <div class="timeline-item">
-            <span class="item-role">Profesor de Educación Tecnológica</span>
-            <span class="item-company">Gob. Ciudad De Buenos Aires</span>
-            <span class="item-date">Jun. 2012 - Actualidad (14 años)</span>
-            <p class="item-desc">Liderazgo en integración de tecnología educativa en diversos institutos. Actualmente
-                desempeñando funciones en EEM 1 DE 20.</p>
-        </div>
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-role">Profesor de Tecnología Aplicada</span>
+                        <span class="item-date">Jul. 2016 - Actualidad</span>
+                    </div>
+                    <span class="item-company">Gobierno de la Ciudad de Buenos Aires</span>
+                    <p class="item-desc">Educación secundaria y técnica.</p>
+                    <ul class="item-details">
+                        <li>Primeros pasos en robótica con alumnos de 13 años en adelante.</li>
+                        <li>Programación con Micro:bit y Arduino.</li>
+                        <li>Diseño web y gestión de bases de datos.</li>
+                    </ul>
+                </div>
 
-        <div class="timeline-item">
-            <span class="item-role">Full Stack Developer / Analista de Sistemas</span>
-            <span class="item-company">Grupo Caddag</span>
-            <span class="item-date">Oct. 2015 - Mar. 2016</span>
-            <p class="item-desc">Desarrollo integral de aplicaciones web y análisis de sistemas en Barcelona.</p>
-        </div>
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-role">Full Stack Developer / Técnico</span>
+                        <span class="item-date">Dic. 2007 - Actualidad</span>
+                    </div>
+                    <span class="item-company">Génesis Copiers, Buenos Aires</span>
+                    <ul class="item-details">
+                        <li>Reparación de Fotocopiadoras Color y Blanco/Negro.</li>
+                        <li>Reparación de Impresoras y Escáner.</li>
+                        <li>Instalación y configuración de redes de impresión.</li>
+                    </ul>
+                </div>
 
-        <div class="timeline-item">
-            <span class="item-role">Analista de Sistemas</span>
-            <span class="item-company">Catalonia, Spain</span>
-            <span class="item-date">Oct. 2015 - Feb. 2016</span>
-            <p class="item-desc">Mantenimiento de sistemas generales (ABM) y control de flujos de datos.</p>
-        </div>
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-role">Analista de Sistemas</span>
+                        <span class="item-date">Sep. 2015 - Ene. 2016</span>
+                    </div>
+                    <span class="item-company">Grupo CADDAG, L'Arboç (Tarragona)</span>
+                    <p class="item-desc">Servicios medioambientales.</p>
+                    <ul class="item-details">
+                        <li>Altas, bajas y modificaciones de bases de datos.</li>
+                        <li>Programación PHP y edición de sitios web corporativos.</li>
+                        <li>Uso de Laravel y APIs Web Services.</li>
+                    </ul>
+                </div>
 
-        <div class="timeline-item">
-            <span class="item-role">Information Technology Specialist</span>
-            <span class="item-company">EIS Group</span>
-            <span class="item-date">Feb. 2015 - Jun. 2015</span>
-            <p class="item-desc">Especialista en soporte y administración de infraestructura tecnológica.</p>
-        </div>
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-role">Profesor de Tecnología y Taller</span>
+                        <span class="item-date">Dic. 2011 - Mar. 2015</span>
+                    </div>
+                    <span class="item-company">Colegio Comercial</span>
+                    <ul class="item-details">
+                        <li>Paquete Microsoft Office avanzado para oficinas.</li>
+                        <li>Diseño Web (HTML, JavaScript, PHP).</li>
+                        <li>Instalación y configuración de redes.</li>
+                    </ul>
+                </div>
 
-        <!-- Educación -->
-        <h2 class="section-title"><i data-lucide="graduation-cap"></i> Educación</h2>
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-role">Profesor de Informática</span>
+                        <span class="item-date">Dic. 2007 - Mar. 2009</span>
+                    </div>
+                    <span class="item-company">Instituto Superior Hartley Shannon, Buenos Aires</span>
+                    <ul class="item-details">
+                        <li>Diseño de páginas web dinámicas (PHP, Perl, CSS).</li>
+                        <li>Mantenimiento de servidores.</li>
+                    </ul>
+                </div>
 
-        <div class="timeline-item">
-            <span class="item-role">Full-Stack Web Developer</span>
-            <span class="item-company">EducacionIT</span>
-            <span class="item-date">2018 - 2019</span>
-            <p class="item-desc">Entrenamiento intensivo en PHP, MySQL, JavaScript, HTML5 y CSS3.</p>
-        </div>
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-role">Encargado de Turno / Logística</span>
+                        <span class="item-date">Dic. 2002 - Dic. 2005</span>
+                    </div>
+                    <span class="item-company">Imagen Grafica, Buenos Aires</span>
+                    <p class="item-desc">Mando intermedio (1-5 personas).</p>
+                    <ul class="item-details">
+                        <li>Compras de insumos y mantenimiento de infraestructura.</li>
+                        <li>Implementación de conexión inalámbrica para clientes.</li>
+                    </ul>
+                </div>
 
-        <div class="timeline-item">
-            <span class="item-role">Diseño Web y Gráfico</span>
-            <span class="item-company">Torre Barrina, Ayto. de L'Hospitalet</span>
-            <span class="item-date">2016</span>
-            <p class="item-desc">Tratamiento de imágenes y maquetación web profesional.</p>
-        </div>
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-role">Jefe de Compras / Producción</span>
+                        <span class="item-date">Dic. 1986 - Dic. 1992</span>
+                    </div>
+                    <span class="item-company">Kalay (La Rioja / Buenos Aires)</span>
+                    <p class="item-desc">Empresa metalúrgica y electrónica.</p>
+                    <ul class="item-details">
+                        <li>Control de producción y personal.</li>
+                        <li>Armado de equipos electrónicos y soldadura.</li>
+                    </ul>
+                </div>
+            </section>
 
-        <!-- Habilidades -->
-        <h2 class="section-title"><i data-lucide="code"></i> Skills técnicos</h2>
-        <div class="skills-grid">
-            <div class="skill-tag">Full Stack PHP</div>
-            <div class="skill-tag">JavaScript / jQuery</div>
-            <div class="skill-tag">MySQL</div>
-            <div class="skill-tag">HTML5 / CSS3</div>
-            <div class="skill-tag">Git / GitHub</div>
-            <div class="skill-tag">SCRUM</div>
-            <div class="skill-tag">Node.js</div>
-            <div class="skill-tag">Testing QA</div>
-        </div>
+            <aside class="sidebar">
+                <section>
+                    <h2 class="section-title"><i data-lucide="code"></i> Skills</h2>
 
-        <footer class="footer">
-            <p>Pasión por la tecnología y la educación.</p>
-        </footer>
+                    <div class="skills-group">
+                        <h3>Frontend</h3>
+                        <div class="skills-tags">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Ajax</span>
+                            <span class="skill-tag">Diseño Responsive</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h3>Backend & DB</h3>
+                        <div class="skills-tags">
+                            <span class="skill-tag">PHP</span>
+                            <span class="skill-tag">Laravel</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">API Web Services</span>
+                            <span class="skill-tag">Perl</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h3>Otros</h3>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Arduino / Micro:bit</span>
+                            <span class="skill-tag">Redes</span>
+                            <span class="skill-tag">Microsoft Office</span>
+                            <span class="skill-tag">Hardware Repair</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="section-title"><i data-lucide="graduation-cap"></i> Educación</h2>
+
+                    <div class="education-item">
+                        <p class="edu-title">Técnico Superior en Desarrollo Aplicaciones Web</p>
+                        <p class="edu-meta">It Academy</p>
+                        <p class="edu-date">2019 - 2020</p>
+                    </div>
+
+                    <div class="education-item">
+                        <p class="edu-title">Informática y Comunicaciones</p>
+                        <p class="edu-meta">Colegio San Martin</p>
+                        <p class="edu-date">1986 - 1995</p>
+                    </div>
+
+                    <div class="education-item">
+                        <p class="edu-title">Diseño páginas web Dinámicas</p>
+                        <p class="edu-meta">Univ. de la Ciudad de Buenos Aires</p>
+                        <p class="edu-date">2000</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="section-title"><i data-lucide="languages"></i> Idiomas</h2>
+                    <div class="lang-item">
+                        <span class="lang-name">Español</span>
+                        <span class="lang-level">Nativo</span>
+                    </div>
+                    <div class="lang-item">
+                        <span class="lang-name">Catalán</span>
+                        <span class="lang-level">Intermedio</span>
+                    </div>
+                    <div class="lang-item">
+                        <span class="lang-name">Inglés</span>
+                        <span class="lang-level">Técnico</span>
+                    </div>
+                </section>
+
+                <section class="no-print" style="margin-top: 2rem;">
+                    <div
+                        style="background: var(--accent-glow); padding: 1rem; border-radius: 12px; border: 1px dashed var(--accent);">
+                        <p style="font-size: 0.8rem; color: var(--accent); font-weight: 600;">TIP:</p>
+                        <p style="font-size: 0.8rem;">Pulsa el botón de arriba o Ctrl+P y selecciona "Guardar como PDF"
+                            para obtener tu CV profesional.</p>
+                    </div>
+                </section>
+            </aside>
+        </main>
     </div>
 
     <script>
         lucide.createIcons();
-        const spotlight = document.getElementById('spotlight');
-        document.addEventListener('mousemove', (e) => {
-            document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
-            document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
-        });
-        document.addEventListener('touchmove', (e) => {
-            document.documentElement.style.setProperty('--mouse-x', `${e.touches[0].clientX}px`);
-            document.documentElement.style.setProperty('--mouse-y', `${e.touches[0].clientY}px`);
-        });
     </script>
 </body>
 
