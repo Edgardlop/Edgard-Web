@@ -1,0 +1,20 @@
+mport type { SVGProps } from "react";
+type P = SVGProps<SVGSVGElement>;
+const stroke = { fill: "none", stroke: "currentColor", strokeWidth: 1.7, strokeLinecap: "round", strokeLinejoin: "round" } as const;
+
+export const IconArrowUpRight = (p: P) => (<svg viewBox="0 0 24 24" width="1em" height="1em" {...stroke} {...p}><path d="M7 17 17 7" /><path d="M9.5 7H17v7.5" /></svg>);
+export const IconArrowDown = (p: P) => (<svg viewBox="0 0 24 24" width="1em" height="1em" {...stroke} {...p}><path d="M12 4v16" /><path d="m5.5 13.5 6.5 6.5 6.5-6.5" /></svg>);
+export const IconArrowUp = (p: P) => (<svg viewBox="0 0 24 24" width="1em" height="1em" {...stroke} {...p}><path d="M12 20V4" /><path d="m5.5 10.5 6.5-6.5 6.5 6.5" /></svg>);
+export const IconMail = (p: P) => (<svg viewBox="0 0 24 24" width="1em" height="1em" {...stroke} {...p}><rect x="3" y="5.5" width="18" height="13" rx="2" /><path d="m4 7.5 7.2 5.4a1.3 1.3 0 0 0 1.6 0L20 7.5" /></svg>);
+export const IconPin = (p: P) => (<svg viewBox="0 0 24 24" width="1em" height="1em" {...stroke} {...p}><path d="M12 21s-6.5-5.4-6.5-10.3A6.5 6.5 0 0 1 12 4a6.5 6.5 0 0 1 6.5 6.7C18.5 15.6 12 21 12 21Z" /><circle cx="12" cy="10.6" r="2.2" /></svg>);
+export const IconPrompt = (p: P) => (<svg viewBox="0 0 24 24" width="1em" height="1em" {...stroke} {...p}><path d="m5 7 5 5-5 5" /><path d="M12.5 17H19" /></svg>);
+export const IconCode = (p: P) => (<svg viewBox="0 0 24 24" width="1em" height="1em" {...stroke} {...p}><path d="m8 8-4.5 4L8 16" /><path d="m16 8 4.5 4L16 16" /><path d="M13.2 5.5 10.8 18.5" /></svg>);
+export const IconSpark = (p: P) => (<svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" {...p}><path d="M12 2.5c.9 5.2 4.3 8.6 9.5 9.5-5.2.9-8.6 4.3-9.5 9.5-.9-5.2-4.3-8.6-9.5-9.5 5.2-.9 8.6-4.3 9.5-9.5Z" /></svg>);
+export const IconCopy = (p: P) => (<svg viewBox="0 0 24 24" width="1em" height="1em" {...stroke} {...p}><rect x="8.5" y="8.5" width="11" height="11" rx="1.5" /><path d="M15.5 8.5v-3a1.5 1.5 0 0 0-1.5-1.5H5.5A1.5 1.5 0 0 0 4 5.5V14a1.5 1.5 0 0 0 1.5 1.5h3" /></svg>);
+export const IconCheck = (p: P) => (<svg viewBox="0 0 24 24" width="1em" height="1em" {...stroke} {...p}><path d="m4.5 12.5 5 5L19.5 7" /></svg>);
+export const IconMenu = (p: P) => (<svg viewBox="0 0 24 24" width="1em" height="1em" {...stroke} {...p}><path d="M4 7h16" /><path d="M4 12h10" /><path d="M4 17h16" /></svg>);
+export const IconClose = (p: P) => (<svg viewBox="0 0 24 24" width="1em" height="1em" {...stroke} {...p}><path d="m6 6 12 12" /><path d="M18 6 6 18" /></svg>);
+export const IconGlobe = (p: P) => (<svg viewBox="0 0 24 24" width="1em" height="1em" {...stroke} {...p}><circle cx="12" cy="12" r="8.5" /><path d="M3.5 12h17" /><path d="M12 3.5c2.6 2.3 3.9 5.1 3.9 8.5s-1.3 6.2-3.9 8.5c-2.6-2.3-3.9-5.1-3.9-8.5s1.3-6.2 3.9-8.5Z" /></svg>);
+export const IconGitHub = (p: P) => (<svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" {...p}><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.05-.01-1.9-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.9-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z" /></svg>);
+export const IconLinkedIn = (p: P) => (<svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" {...p}><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z" /></svg>);
+export const IconCoffee = (p: P) => (<svg viewBox="0 0 24 24" width="1em" height="1em" {...stroke} {...p}><path d="M4 9h12v6.5
